@@ -19,4 +19,9 @@ Route::get('/', function () {
     return redirect('advertisement');
 });
 
+Route::get('advertisement/admin', [AdvertisementController::class, 'admin'])
+    ->name('advertisement.admin');
+
 Route::resource('advertisement', AdvertisementController::class);
+
+Auth::routes();

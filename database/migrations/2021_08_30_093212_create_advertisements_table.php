@@ -18,6 +18,7 @@ class CreateAdvertisementsTable extends Migration
             $table->decimal('price', 10, 2);
             $table->text('description');
             $table->string('image_url', 200)->default('');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

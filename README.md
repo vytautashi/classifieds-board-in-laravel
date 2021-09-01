@@ -1,5 +1,5 @@
 # Classifieds Board in Laravel 8
-Simple classifieds board in laravel 8 with bootstrap, CRUD and image file upload.
+Simple classifieds board in laravel 8 with bootstrap, CRUD, authentication and image file upload.
 
 ## Getting Started
 ### Prerequisites
@@ -32,13 +32,16 @@ php artisan delete-old-ads
 php artisan delete-old-ads 60
 php artisan delete-old-ads 0
 ```
-- first commands deletes advertisements that are older than 30 days.
-- second commands deletes advertisements that are older than 60 days
-- third commands deletes all advertisements
+- first command deletes advertisements that are older than 30 days.
+- second command deletes advertisements that are older than 60 days
+- third command deletes all advertisements
 
 ## Screenshots
 **Homepage**
 ![screenshot homepage](screenshot1.png)
+
+**My advertisements (admin panel)**
+![screenshot post advertisement](screenshot4.png)
 
 **Post advertisement**
 ![screenshot post advertisement](screenshot2.png)
