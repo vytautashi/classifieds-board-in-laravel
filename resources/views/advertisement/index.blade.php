@@ -4,6 +4,23 @@
 
 @section('content')
 
+    <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item  {{ Route::currentRouteName() == 'advertisement.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('advertisement.index') }}">All</a>
+            </li>
+            @php
+                $category_id = $category->id ?? '';
+            @endphp
+            @foreach ($categories as $cat)
+                <li class="nav-item {{ $category_id === $cat->id ? 'active' : '' }}">
+                    <a class="nav-link"
+                        href="{{ route('advertisement.adsByCategory', $cat->id) }}">{{ $cat->title }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
     <div class="row mx-3">
         @foreach ($ads as $ad)
             <div class="col-3 p-0">

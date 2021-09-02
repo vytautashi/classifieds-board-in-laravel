@@ -20,6 +20,18 @@
         <form method="post" enctype="multipart/form-data" action="{{ route('advertisement.update', $ad->id) }}">
             @csrf
             @method('PUT')
+            <label for="category_id" class="mt-2 mb-1">Category:</label>
+            <select class="form-control col-sm-8" id="category_id" name="category_id">
+                <option>Select category</option>
+                @php
+                    $category_id = old('category_id') ?? $ad->category_id;
+                @endphp
+                @foreach ($categories as $cat)
+                    <option value="{{ $cat->id }}" {{ $category_id == $cat->id ? ' selected' : '' }}>
+                        {{ $cat->title }}</option>
+                @endforeach
+            </select>
+
             <label for="description" class="mt-2 mb-1">Description:</label>
             <textarea class="form-control col-sm-8" id="description" name="description" rows="4"
                 cols="50">{{ old('description') ?? $ad->description }}</textarea>

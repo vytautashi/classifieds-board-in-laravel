@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('advertisement/admin', [AdvertisementController::class, 'admin'])
     ->name('advertisement.admin');
 
+Route::get('advertisement/category/{id}', [AdvertisementController::class, 'adsByCategory'])
+    ->name('advertisement.adsByCategory');
+
 Route::resource('advertisement', AdvertisementController::class);
 
 Auth::routes();
